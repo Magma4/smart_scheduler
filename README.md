@@ -81,26 +81,3 @@ Example output:
   }
 }
 ```
-
-Project Layout
---------------
-```
-scheduler/
-  models.py
-  serializers.py
-  api.py
-  services/
-    solver.py
-  tests/
-    test_solver.py
-    test_api.py
-```
-
-Development Notes
------------------
-- The solver is pure-Python and decoupled from views for testability and clarity.
-- Logging is enabled in solver and API exception paths.
-
-Next Phases
------------
-- Add React frontend and CI/CD (GitHub Actions) pipeline.
