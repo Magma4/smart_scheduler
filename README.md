@@ -5,13 +5,6 @@ Overview
 --------
 Smart Scheduler is a Django + DRF backend that generates optimized exam schedules using a Constraint Satisfaction Problem (CSP) solver.
 
-Features
---------
-- Django REST Framework API for `Room`, `TimeSlot`, `Course`, and `Exam`
-- CSP solver with Backtracking + MRV + Forward Checking
-- CORS and environment-driven configuration
-- Health check at `/api/health/`
-
 Getting Started
 ---------------
 1. Create a virtual environment and install dependencies:
@@ -41,14 +34,7 @@ Environment Variables
 - `ALLOWED_HOSTS`: Comma-separated allowed hosts
 - `CORS_ALLOWED_ORIGINS`: Optional comma-separated list of allowed origins
 
-API Endpoints
--------------
-- `/api/rooms/` — CRUD
-- `/api/timeslots/` — CRUD
-- `/api/courses/` — CRUD
-- `/api/exams/` — CRUD
-- `/api/generate-schedule/` — POST to run CSP solver
-- `/api/health/` — GET health check
+
 
 CSP Solver Logic
 ----------------
@@ -71,13 +57,4 @@ During search, the solver:
 - Checks conflicts for room, instructor, and shared students
 - Applies forward checking to prune incompatible values in neighbors
 
-Example output:
-```json
-{
-  "CSPStatus": "success",
-  "assignments": {
-    "C101": {"room": "R1", "timeslot": "Mon 09:00–11:00"},
-    "C102": {"room": "R2", "timeslot": "Mon 12:00–14:00"}
-  }
-}
-```
+
